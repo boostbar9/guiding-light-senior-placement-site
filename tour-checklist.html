@@ -308,12 +308,6 @@ p{margin:0 0 1em}
 .foot-bottom p{margin:0;color:rgba(255,255,255,.55)}
 
 /* Mobile action bar */
-.mobile-action-bar{display:none;position:fixed;left:.75rem;right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border:1px solid rgba(201,162,74,.25);border-radius:18px;box-shadow:0 10px 32px -8px rgba(31,42,55,.28),0 2px 8px rgba(0,0,0,.08);z-index:40;padding:.4rem;grid-template-columns:1fr 1fr 1fr;gap:.15rem}
-@media(max-width:720px){.mobile-action-bar{display:grid}.site-footer{padding-bottom:5.25rem;padding-top:1.5rem}}
-@media (prefers-color-scheme: dark){.mobile-action-bar{background:rgba(30,38,48,.9);border-color:rgba(201,162,74,.35);box-shadow:0 12px 36px -6px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.4)}}
-.mab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.55rem .5rem;color:var(--ink);text-decoration:none;font-size:.72rem;font-weight:600;border-radius:12px;line-height:1.15;transition:background .2s}
-.mab-btn:hover{text-decoration:none;background:var(--cream-2)}
-.mab-call{color:var(--gold-deep)}
 .mab-ico{font-size:1.2rem;line-height:1}
 
 /* Reveal */
@@ -363,8 +357,8 @@ p{margin:0 0 1em}
 
 /* Print */
 @media print{
-  .site-header,.site-footer,.mobile-action-bar,.urgent-strip,.reveal{display:block!important;opacity:1!important;transform:none!important}
-  .site-header,.site-footer,.mobile-action-bar,.urgent-strip{display:none!important}
+  .site-header,.site-footer,.urgent-strip,.reveal{display:block!important;opacity:1!important;transform:none!important}
+  .site-header,.site-footer,.urgent-strip{display:none!important}
   body{background:#fff;color:#000}
   .check-group{break-inside:avoid;border:1px solid #ccc;margin-bottom:1rem}
   .page-hero{background:#fff;padding:1rem 0}
@@ -564,7 +558,6 @@ h3{font-size:1.4rem;line-height:1.35}
 .urgent-badge{font-size:.78rem !important;padding:.2rem .65rem !important}
 
 /* Mobile action bar */
-.mab-btn{font-size:.82rem !important;padding:.65rem !important}
 .mab-ico{font-size:1.4rem !important}
 
 /* Map legend */
@@ -599,15 +592,6 @@ h3{font-size:1.4rem;line-height:1.35}
   #primaryNav{inset:52px 0 auto 0 !important}
 }
 
-
-/* mobile-hide-hero-call */
-
-/* mobile: hide redundant hero Call CTA — the fixed action bar already exposes Call */
-@media(max-width:720px){
-  .hero .cta-row .btn-primary{display:none}
-  .hero .cta-row{gap:.75rem}
-  .hero .cta-row .btn-ghost-light{width:100%;justify-content:center}
-}
 
 </style>
 <script type="application/ld+json">
@@ -725,21 +709,6 @@ h3{font-size:1.4rem;line-height:1.35}
     <p class="muted">Family-founded · Family-run · Ventura County</p>
   </div>
 </footer>
-<div class="mobile-action-bar" role="navigation" aria-label="Quick contact">
-  <a href="tel:+17472226399" class="mab-btn mab-call" aria-label="Call us">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1Z"/></svg>
-    <span>Call</span>
-  </a>
-  <a href="sms:+17472226399" class="mab-btn mab-text" aria-label="Text us">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.5A8 8 0 1 1 21 12z"/></svg>
-    <span>Text</span>
-  </a>
-  <a href="index.html#contact" class="mab-btn mab-form" aria-label="Send a message">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 5h18v14H3z"/><path d="m3 7 9 6 9-6" fill="none" stroke="#fff" stroke-width="2"/></svg>
-    <span>Message</span>
-  </a>
-</div>
-
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 const header = document.getElementById('siteHeader');
