@@ -105,9 +105,9 @@ p{margin:0 0 1em}
 .urgent-badge{display:inline-block;background:var(--gold);color:#1f2a37;font-weight:700;padding:.15rem .55rem;border-radius:4px;font-size:.72rem;letter-spacing:.08em;margin-right:.6rem;vertical-align:middle}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:50;background:#fbf8ef;border-bottom:0;transition:.25s}
-.site-header.scrolled{background:#fbf8ef;box-shadow:var(--shadow-sm)}
-@media (prefers-color-scheme: dark){.site-header{background:#13191f}.site-header.scrolled{background:#13191f}}
+.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#fbf8ef 0%,#f6f1e2 100%);border-bottom:1px solid rgba(201,162,74,.15);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 4px 14px -8px rgba(31,42,55,.15);transition:.25s}
+.site-header.scrolled{background:linear-gradient(180deg,#fbf8ef 0%,#f6f1e2 100%);box-shadow:0 4px 20px -6px rgba(31,42,55,.18);border-bottom-color:rgba(201,162,74,.28)}
+@media (prefers-color-scheme: dark){.site-header{background:linear-gradient(180deg,#161d25 0%,#12181f 100%);border-bottom-color:rgba(201,162,74,.22);box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 6px 18px -8px rgba(0,0,0,.6)}.site-header.scrolled{background:linear-gradient(180deg,#161d25 0%,#12181f 100%);border-bottom-color:rgba(201,162,74,.35);box-shadow:0 6px 24px -8px rgba(0,0,0,.7)}}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:.5rem 1.25rem;gap:.9rem}
 .logo{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none}
 .logo-mark img{width:34px;height:34px;border-radius:50%;background:#000;object-fit:cover;display:block}
@@ -308,10 +308,10 @@ p{margin:0 0 1em}
 .foot-bottom p{margin:0;color:rgba(255,255,255,.55)}
 
 /* Mobile action bar */
-.mobile-action-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08);z-index:40;padding:.2rem .25rem calc(.2rem + env(safe-area-inset-bottom));grid-template-columns:1fr 1fr 1fr}
-@media(max-width:720px){.mobile-action-bar{display:grid}.site-footer{padding-bottom:3.75rem;padding-top:1.5rem}}
-@media (prefers-color-scheme: dark){.mobile-action-bar{background:var(--night-2)}}
-.mab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.1rem;padding:.35rem .5rem;color:var(--ink);text-decoration:none;font-size:.7rem;font-weight:600;border-radius:8px;line-height:1.1}
+.mobile-action-bar{display:none;position:fixed;left:.75rem;right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border:1px solid rgba(201,162,74,.25);border-radius:18px;box-shadow:0 10px 32px -8px rgba(31,42,55,.28),0 2px 8px rgba(0,0,0,.08);z-index:40;padding:.4rem;grid-template-columns:1fr 1fr 1fr;gap:.15rem}
+@media(max-width:720px){.mobile-action-bar{display:grid}.site-footer{padding-bottom:5.25rem;padding-top:1.5rem}}
+@media (prefers-color-scheme: dark){.mobile-action-bar{background:rgba(30,38,48,.9);border-color:rgba(201,162,74,.35);box-shadow:0 12px 36px -6px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.4)}}
+.mab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.55rem .5rem;color:var(--ink);text-decoration:none;font-size:.72rem;font-weight:600;border-radius:12px;line-height:1.15;transition:background .2s}
 .mab-btn:hover{text-decoration:none;background:var(--cream-2)}
 .mab-call{color:var(--gold-deep)}
 .mab-ico{font-size:1.2rem;line-height:1}
@@ -597,6 +597,16 @@ h3{font-size:1.4rem;line-height:1.35}
   .nav{padding:.45rem 1rem !important;gap:.6rem}
   .menu-toggle{width:34px;height:34px}
   #primaryNav{inset:52px 0 auto 0 !important}
+}
+
+
+/* mobile-hide-hero-call */
+
+/* mobile: hide redundant hero Call CTA — the fixed action bar already exposes Call */
+@media(max-width:720px){
+  .hero .cta-row .btn-primary{display:none}
+  .hero .cta-row{gap:.75rem}
+  .hero .cta-row .btn-ghost-light{width:100%;justify-content:center}
 }
 
 </style>
